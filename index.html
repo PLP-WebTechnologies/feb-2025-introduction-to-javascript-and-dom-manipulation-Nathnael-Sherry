@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Manipulation Demo</title>
+    <title>DOM Manipulation</title>
 
 </head>
 <body>
     <header class="container">
         <nav>
-            <h1>DOM Demo</h1>
+            <h1>D.O.M Manipulation</h1>
         </nav>
     </header>
 
@@ -24,7 +24,8 @@
 
         <article class="card">
             <h3>Element Control</h3>
-            <div id="element-container">
+            <div
+             id="element-container">
                 <p>Existing element</p>
             </div>
             <div class="button-group">
@@ -34,18 +35,16 @@
         </article>
     </main>
 
-    <footer class="container">
-        <p>&copy; 2025 DOM Demo</p>
-    </footer>
+   
 
     <script>
-        // Text manipulation
+       
         function changeText() {
             const element = document.getElementById('dynamic-text');
             element.textContent = `Text changed at: ${new Date().toLocaleTimeString()}`;
         }
 
-        // Style manipulation
+    
         function toggleColor() {
             const textElement = document.getElementById('dynamic-text');
             textElement.style.color = textElement.style.color === 'red' 
