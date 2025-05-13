@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Demo</title>
+
+</head>
+<body>
+    <header class="container">
+        <nav>
+            <h1>DOM Demo</h1>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2 id="dynamic-text">Initial Text Content</h2>
+            <div class="button-group">
+                <button onclick="changeText()">Change Text</button>
+                <button onclick="toggleColor()">Toggle Color</button>
+            </div>
+        </section>
+
+        <article class="card">
+            <h3>Element Control</h3>
+            <div id="element-container">
+                <p>Existing element</p>
+            </div>
+            <div class="button-group">
+                <button onclick="addElement()">Add Element</button>
+                <button onclick="removeElement()">Remove Element</button>
+            </div>
+        </article>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2025 DOM Demo</p>
+    </footer>
+
+    <script>
+        // Text manipulation
+        function changeText() {
+            const element = document.getElementById('dynamic-text');
+            element.textContent = `Text changed at: ${new Date().toLocaleTimeString()}`;
+        }
+
+        // Style manipulation
+        function toggleColor() {
+            const textElement = document.getElementById('dynamic-text');
+            textElement.style.color = textElement.style.color === 'red' 
+                ? 'var(--primary-color)' 
+                : 'red';
+        }
+
+        // Element creation/removal
+        let elementCounter = 1;
+        function addElement() {
+            const container = document.getElementById('element-container');
+            const newElement = document.createElement('p');
+            newElement.textContent = `New element ${elementCounter++}`;
+            container.appendChild(newElement);
+        }
+
+        function removeElement() {
+            const container = document.getElementById('element-container');
+            if (container.lastElementChild) {
+                container.removeChild(container.lastElementChild);
+            }
+        }
+    </script>
+</body>
+</html>
